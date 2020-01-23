@@ -1,0 +1,109 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Demo2
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            /*
+            // create a datasource to query later with LINQ
+            
+            IList NumList = new ArrayList();
+            NumList.Add(1); 
+            NumList.Add(2);
+            NumList.Add(3);
+            NumList.Add(4);
+            NumList.Add(5); 
+            NumList.Add(6);
+            NumList.Add(7);
+            NumList.Add(8); 
+            NumList.Add(9);
+            NumList.Add(10);
+            NumList.Add(11); 
+            NumList.Add(12);
+            NumList.Add(13);
+            NumList.Add(14);
+            NumList.Add(15);
+            NumList.Add(16);
+            NumList.Add(17);
+            NumList.Add(18);
+            NumList.Add(19); 
+            NumList.Add(20);
+
+            foreach (var val in NumList)
+            Console.Write(" "+val);
+            Console.ReadKey();
+
+            //----------------------------------------------//
+
+            IList<int> intList = new List<int>();
+            intList.Add(1);
+            intList.Add(2);
+            intList.Add(3);
+            intList.Add(4);
+
+            foreach (var el in intList)
+                Console.Write(el);
+
+
+        }*/
+
+            int[] nums = new int[] {1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+
+            var res = from a in nums select a;
+            foreach (int i in res)
+            Console.Write("{0} ", i);
+            Console.WriteLine('\n');
+
+            //------these are the square numbers of the sqaure nums------------//
+            var res1 = from a in nums select a;
+            foreach (int i in res1)
+            Console.Write("{0} ", i*i);
+           
+            Console.WriteLine('\n');
+
+
+            //------these are the even numbers of the sqaure nums------------//
+            var res2 = from a in nums where a%2== 0 orderby a select a;
+            foreach (int i in res2)
+            Console.Write("{0} ", i*i);
+            Console.WriteLine('\n');
+
+         
+
+            //------these are the odd numbers of the sqaure nums------------//
+            var res3 = from a in nums where a%2 != 0  orderby a select a;
+            foreach (int i in res3)
+            Console.Write("{0} ",i*i);
+            Console.WriteLine('\n');
+            Console.ReadKey();
+
+
+            //--------this is the Count of  EVEN nums--------------------//
+            //--------this is the Count of  ODD nums--------------------//
+            //--------this is the addition of the EVEN nums-------//
+            //--------this is the addition of the ODD nums-------//
+            //--------this is the average of the EVEN nums-------//
+            //--------this is the addition of the ODD nums-------//
+            //--------this is the maximum of the EVEN nums-------//
+            //--------this is the maximum of the ODD nums-------//
+            //--------this is the minimum of the EVEN nums-------//
+            //--------this is the maximum of the ODD nums-------//
+
+
+
+
+
+
+
+
+        }
+    }
+}
