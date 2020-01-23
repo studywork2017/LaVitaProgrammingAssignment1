@@ -1,0 +1,117 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Demo2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int [] myArr = new int[20]{
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+
+        
+            //-------this prints 1-20------//
+
+
+            foreach (int num in myArr)
+            {
+                Console.Write(" "+num);    //-- how do you print a new line after a foreach loop?// 
+            }
+
+
+            //-------this prints the sqaure1-20------//
+
+           
+
+            foreach (int num in myArr)
+            {           
+                Console.Write(" "+num*num);
+            }
+
+            
+           IEnumerable<int> Query1 =
+           from num in myArr
+           where num % 2 == 0
+           select num;
+
+            Console.WriteLine("\n"); 
+            //---this prints even nums------//
+            foreach (int i in Query1)
+            {
+                Console.Write(i + " ");
+            }
+
+
+            //------this prints the number of even numbers -----------------//
+            Console.WriteLine("\n");
+            int count = Query1.Count();
+            Console.WriteLine("There are {0} even numbers", count);
+
+
+            //------this prints the average of even numbers -----------------//
+
+            Console.WriteLine("\n");
+            double average = Query1.Average();
+            Console.WriteLine("The average of the even numbers is {0}", average);
+
+            //------this prints the minimum of even numbers -----------------//
+
+            Console.WriteLine("\n");
+            double max = Query1.Max();
+            Console.WriteLine("The max of the even numbers is {0}", max);
+
+            //------this prints the maximum of even numbers -----------------//
+
+            Console.WriteLine("\n");
+            double min = Query1.Min();
+            Console.WriteLine("The minimum of the even numbers is {0}", min);
+
+            //---this prints odd nums----------------------------------------------------------------------//
+
+            IEnumerable<int> Query2 =
+       from num in myArr
+       where num % 2 != 0
+       select num;
+
+            Console.WriteLine("\n");
+            //---this prints ODD nums------//
+            foreach (int i in Query2)
+            {
+                Console.Write(i + " ");
+            }
+
+
+            //------this prints the number of ODD numbers -----------------//
+            Console.WriteLine("\n");
+            int count2 = Query2.Count();
+            Console.WriteLine("There are {0} ODD numbers", count2);
+
+
+            //------this prints the average of ODD numbers -----------------//
+
+            Console.WriteLine("\n");
+            double average2 = Query2.Average();
+            Console.WriteLine("The average of the ODD numbers is {0}", average2);
+
+            //------this prints the minimum of ODD numbers -----------------//
+
+            Console.WriteLine("\n");
+            double max2 = Query2.Max();
+            Console.WriteLine("The max of the ODD numbers is {0}", max2);
+
+            //------this prints the maximum of ODD numbers -----------------//
+
+            Console.WriteLine("\n");
+            double min2 = Query2.Min();
+            Console.WriteLine("The minimum of the ODD numbers is {0}", min2);
+            Console.ReadKey();
+
+        }
+    }
+}
+
